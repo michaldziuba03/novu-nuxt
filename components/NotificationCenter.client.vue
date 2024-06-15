@@ -13,7 +13,7 @@ const sessionLoaded = () => {
     :session-loaded="sessionLoaded"
   >
     <button 
-      class="relative"
+      class="relative w-8 h-8 m-auto"
       :class="{'before:bg-red-700 before:w-2.5 before:h-2.5 before:rounded-full before:absolute before:top-0 before:right-0': slot.unseenCount > 0}"
       >
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
