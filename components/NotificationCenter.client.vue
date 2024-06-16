@@ -1,14 +1,21 @@
 <script lang="ts" setup>
-const subscriberId = import.meta.env.VITE_NOVU_SUBSRIBER_ID;
+// imagine we have authentication and fetch user session data
+const { data, pending, error } = await useAsyncData('session', () =>
+  $fetch('/api/user')
+)
+
 const applicationIdentifier = import.meta.env.VITE_NOVU_APP_ID;
 const sessionLoaded = () => {
   console.log('Notification center session loaded successfully!');
 };
+
 </script>
 <template>
   <NotificationCenterComponent
+    v-if="!pending"
     v-slot="slot"
-    :subscriber-id="subscriberId"
+    :subscriber-id="data.userId"
+    :subscriber-hash="data.hmacHash"
     :application-identifier="applicationIdentifier"
     :session-loaded="sessionLoaded"
   >

@@ -8,9 +8,9 @@ This sample demonstrates how to integrate notification center and trigger notifi
 Create `.env` file and pass your values from Novu dashboard:
 
 ```sh
-VITE_NOVU_SUBSRIBER_ID='<YOUR_SUBSCRIBER_ID>'
-VITE_NOVU_APP_ID='<YOUR_NOVU_APP_ID>'
+NOVU_SUBSRIBER_ID='<YOUR_SUBSCRIBER_ID>'
 NOVU_API_KEY='<YOUR_NOVU_API_KEY>'
+VITE_NOVU_APP_ID='<YOUR_NOVU_APP_ID>'
 ```
 
 To run application:

@@ -9,14 +9,10 @@ export default defineEventHandler(async (event) => {
 
   const body = await readBody(event);
 
-  novu.trigger('untitled', {
+  await novu.trigger('untitled', {
     to: {
       subscriberId: body.subscriberId,
     },
     payload: {}
   });
-
-  return {
-    hello: 'world'
-  }
 });
