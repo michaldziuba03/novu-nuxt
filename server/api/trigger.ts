@@ -7,11 +7,9 @@ const novu = new Novu({
 export default defineEventHandler(async (event) => {
   console.log(`Received event: ${event}`);
 
-  const body = await readBody(event);
-
-  await novu.trigger('untitled', {
+  await novu.trigger('sample-workflow', {
     to: {
-      subscriberId: body.subscriberId,
+      subscriberId: process.env.NOVU_SUBSRIBER_ID!,
     },
     payload: {}
   });

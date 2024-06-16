@@ -5,9 +5,6 @@ function triggerNotification() {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      subscriberId: import.meta.env.VITE_NOVU_SUBSRIBER_ID,
-    }),
   });
 }
 </script>

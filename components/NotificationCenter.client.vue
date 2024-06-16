@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-// imagine we have authentication and fetch user session data
-const { data, pending, error } = await useAsyncData('session', () =>
+
+const { data, status } = await useAsyncData('session', () =>
   $fetch('/api/user')
 )
 
@@ -12,7 +12,7 @@ const sessionLoaded = () => {
 </script>
 <template>
   <NotificationCenterComponent
-    v-if="!pending"
+    v-if="status == 'success' && data"
     v-slot="slot"
     :subscriber-id="data.userId"
     :subscriber-hash="data.hmacHash"
